@@ -20,13 +20,18 @@ namespace CL19037Ejercicio7Guia7
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             ConjeUlam Calcular = new ConjeUlam();
+            bool valido;
             int numero = 0;
             lblNumeroI.Text = "-";
             lbDatos.Items.Clear();
             do
             {
-                numero = int.Parse(Microsoft.VisualBasic.Interaction.InputBox("ingrese un numero Mayor a 0"));
-            } while (numero <= 0);
+                valido = int.TryParse(Microsoft.VisualBasic.Interaction.InputBox("ingrese un numero Mayor a 0"),out numero);
+                if (valido == false)
+                {
+                    MessageBox.Show("Debe ingresar un numero: mayor a 0");
+                }
+            } while (numero <= 0 && valido == false);
 
             lblNumeroI.Text = numero.ToString();
 
