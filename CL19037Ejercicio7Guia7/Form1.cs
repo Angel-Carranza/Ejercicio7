@@ -31,7 +31,7 @@ namespace CL19037Ejercicio7Guia7
                 {
                     MessageBox.Show("Debe ingresar un numero: mayor a 0");
                 }
-            } while (numero <= 0 && valido == false);
+            } while (numero <= 0 || valido == false);
 
             lblNumeroI.Text = numero.ToString();
 
